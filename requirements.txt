@@ -1,0 +1,11 @@
+lasio>=0.31
+matplotlib
+numpy
+pandas
+rank-bm25
+scikit-learn
+shiny>=1.0
+sentence-transformers
+anthropic
+requests
+pytest

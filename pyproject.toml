@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "wellrag"
+version = "0.1.0"
+description = "AI assistant for legacy LAS logs and well reports: RAG, curve analysis and log plots"
+readme = "README.md"
+license = { text = "MIT" }
+authors = [{ name = "Scott Anderwald" }]
+requires-python = ">=3.10"
+dependencies = [
+  "lasio>=0.31",
+  "matplotlib",
+  "numpy",
+  "pandas",
+  "rank-bm25",
+  "scikit-learn",
+  "shiny>=1.0",
+]
+
+[project.optional-dependencies]
+embeddings = ["sentence-transformers"]
+llm = ["anthropic", "requests"]
+dev = ["pytest"]
+
+[project.scripts]
+wellrag = "wellrag.cli:main"
+
+[tool.setuptools]
+packages = ["wellrag"]
